@@ -49,7 +49,7 @@ This is the core demo. Run the steps below in order to see exactly how chunking 
 Character splitting cuts at fixed 500-character intervals, ignoring section boundaries, code blocks, and tables.
 
 ```bash
-python demo/02_ingest_char.py
+python demo/ingest_char.py
 ```
 
 Expected output: ~60–70 chunks created from the two documents.
@@ -59,7 +59,7 @@ Expected output: ~60–70 chunks created from the two documents.
 ### Step 2 — Query with Character-Split Chunks
 
 ```bash
-python demo/03_query.py "Does this project use a remote Google Maps MCP server?"
+python demo/user_query.py "Does this project use a remote Google Maps MCP server?"
 ```
 
 **What to observe:**
@@ -83,7 +83,7 @@ This clears all stored chunks and embeddings. The folder itself is preserved (it
 Semantic splitting cuts at `##` Markdown headers. Sections over 400 words are further split at `###` headers. Every chunk is a complete, self-contained section.
 
 ```bash
-python demo/02_ingest.py
+python demo/ingest_structure_based.py
 ```
 
 Expected output: ~18–22 chunks — far fewer but each chunk is a whole section.
@@ -93,7 +93,7 @@ Expected output: ~18–22 chunks — far fewer but each chunk is a whole section
 ### Step 5 — Query with Semantic Chunks
 
 ```bash
-python demo/03_query.py "What Python code do I need to connect an agent to the Maps MCP server?"
+python demo/user_query.py "What Python code do I need to connect an agent to the Maps MCP server?"
 ```
 
 **What to observe:**
